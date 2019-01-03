@@ -1,0 +1,79 @@
+﻿/* CIS166AA Assignment 1 */
+/* Jeremy Bowne */
+/* 				*/
+article, body, div, footer, h1, li, p, ul {
+  margin: 0;
+  padding: 0.3em;
+  }
+
+body {
+  width: 960px;
+  margin: 0 auto;
+  font-family: tahoma, arial, helvetica, sans-serif;
+  background: black;
+  }
+  
+footer {
+  display: block;
+  clear: both;
+  font-size: 1.1em;
+  }
+
+footer p {
+  background: #FBF7F7;
+  text-align: center;
+  padding: 0.25em;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  }
+
+h1 {
+  background: #FBF7F7;
+  color: black;
+  text-shadow: 1px 1px 1px #555;
+  display: block;
+  clear: both;
+  font-size: 2.0em;
+  text-align: center;
+  padding: 0.25em;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-topleft: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+h1 p {
+  color: black;
+  background: #FBF7F7;
+  text-align: center;
+  padding: 0.25em;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-topleft: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  }
+
+p, li {
+  color: white;
+  font-size: 0.8em;
+  }
+
+/* id requirement */
+#foot {
+  color: black;
+}
+
+/* class requirement */
+.thick {
+  font-weight: bold;
+  font-size: 1.1em;
+  }
+

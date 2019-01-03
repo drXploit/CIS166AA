@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+	<!--
+	   Author: Jeremy Bowne
+	   Filename: assign2.html
+	-->
+   <title>Assignment 2 - Coffee Calculator</title>
+   <link href="assign2.css" rel="stylesheet" type="text/css" />
+   
+   <!-- external js file-->
+   <script type="text/javascript" src="myCode.js"></script>   
+   
+</head>
+
+<body>
+	<form>
+		<div id="main">
+			<img src="coffee_logo_micro.jpg" />	 
+			
+			<!-- embedded js -->
+			<script>
+				console.log("embedded JS started");
+				"use strict";
+				document.writeln("<br><br><p id='big'>Welcome to Glendale Community Coffee</p><br>");
+				document.writeln("<h1>Transaction Summary</h1><br>");
+				
+				// gather information for the date to be displayed
+				var todaysDate = new Date();
+				var day = todaysDate.getDate();
+				var month = todaysDate.getMonth() + 1;
+				var year = todaysDate.getFullYear();
+				document.writeln(month + "/" + day + "/" + year + "<br>");
+				
+				// call to external js function in myCode.js
+				init();
+			</script>
+		</div>
+	</form>	
+</body>
+</html>

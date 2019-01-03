@@ -1,0 +1,51 @@
+{"quiz":[
+    {
+		"Question":"How do you format your curly braces?",
+        "Answer1":"Curly braces? I make sure to only have one statement after my ifs!",
+		"Answer2":"On the line after the if statement.",
+		"Answer3":"On the same line as the if statement."
+    },
+    {
+		"Question":"Do you prefer OOP or line-by-line coding?",
+		"Answer1":"I prefer rewriting my code over even if Ive already written it before. 10000 lines of code insanity.",
+        "Answer2":"My code is chaos, with both methods used.",
+		"Answer3":"I'm an OOP master, not a single line gets repeated."
+    },
+	{
+		"Question":"How often should comments should be used?",
+        "Answer1":"My code speaks for itself. I do not need comments.",
+		"Answer2":"My comments are longer than a Steven King novel.",
+		"Answer3":"Enough that myself, and my team can understand what is going on later."
+    },
+	{
+		"Question":"Who is the best programmer?",
+        "Answer1":"Myself.",
+		"Answer2":"Bill Gates of Microsoft notoriety.",
+		"Answer3":"John Carmack of ID Software (DOOM) fame."
+    },
+	{
+		"Question":"How should you begin a project?",
+        "Answer1":"Just jump right into it, it'll eventually clean itself up.",
+		"Answer2":"Talk to a bunch of buddies, plan a little, and start coding.",
+		"Answer3":"Use the SDLC (Software Development Life-Cycle) and begin the planning stage."
+    },
+	{
+		"Question":"Python is ",
+        "Answer1":"a huge snake!",
+		"Answer2":"the dragon killed by Apollo by Delphi",
+		"Answer3":"a programming language that would be a good idea to learn if not already known (and all of the above, too)."
+    },
+	{
+		"Question":"When you think of programming, you",
+        "Answer1":"cringe.",
+		"Answer2":"doubt you will make some money doing it this time, but you like it.",
+		"Answer3":"jump into your IDE and exalt yourself in the power of logic."
+    },	
+	{
+		"Question":"Static is ",
+        "Answer1":"what makes your hair stand up when you rub a balloon on it.",
+		"Answer2":"yeah, the hair thing...",
+		"Answer3":"a programming concept where the variable, method, or function will be stored in the statically allocated memory instead of the automatically allocated memory, which increases the access time."
+    }
+]}
+

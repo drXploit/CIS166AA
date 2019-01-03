@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+		   Author: Jeremy Bowne
+		   Filename: assign9.html
+		-->
+	   <title>Which framework are you?</title>
+	   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+	   <link href="assign10.css" rel="stylesheet" type="text/css" />
+		<script	src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+	   <!-- external js file-->
+	   <script type="text/javascript" src="confirm.js"></script>
+	</head>
+	<body>
+	<form class="mainForm" method="post" action="youare.htm">
+		<div class="div-main" >
+			<div class="form-header">
+				<h1 id="title">calculating results...</h1>
+			</div>
+			<div class="form-body" id="form_body">
+				<img src="down.png" alt="down" id="id_down" height="400" width="400" style="display=none;">
+			</div>
+			<div class="form-footer" id="form_footer">
+				<button type="submit" id="id_proceed" style="display:inline" class="proceed-btn" >Proceed</button>
+				<button type="button" style="display:inline" id="id-reset" class="proceed-btn" onclick="history.back();">Back</button>
+			</div>
+		</div>
+	</form>
+	</body>
+</html>

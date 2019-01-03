@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+	<!--
+	   Author: Jeremy Bowne
+	   Filename: assign3.html
+	-->
+   <title>Assignment 3 - Coffee Calculator</title>
+   <link href="assign3.css" rel="stylesheet" type="text/css" />
+   
+   <!-- external js file-->
+   <script type="text/javascript" src="myCode.js"></script>   
+   
+</head>
+
+<body>
+	
+	<form>
+		<div id="main">
+			<h1>Glendale Community Coffee</h1>
+			<img src="coffee_logo_micro.jpg" />
+			<br>
+		        <label for="nameInput">Name</label>
+	        	<input type="text" id="nameInput" name="name" placeholder="John Doe" required="required" /><br>
+		        <br>
+		        <label for="subTotalInput">Subtotal</label>
+	        	<input type="text" id="subTotalInput" name="subttotalInput" placeholder="0.00" required="required" /><br>
+		        <br>
+		       	<label for="cityTaxInput">City Tax Code</label>
+	        	<input type="text" id="cityTaxInput" name="taxcodeInput" placeholder="P/G/PH" required="required" /><br>
+		        <br>
+		        <hr>
+	      		<label for="cityTaxOutput">City Tax Amount</label>
+		        <input type="text" id="cityTaxOutput" name="taxcodeOutput" placeholder="0.08" required="required" disabled/><br>
+		        <br>
+	      		<label for="totalOutput">Total With Tax</label>
+		        <input type="text" id="totalOutput" name="totalOutput" placeholder="0.00" required="required" disabled/><br>
+		        <br>
+			<br>
+			<input id="calcButton" type="button" value="Calculate" onclick="coffeeCalc();" />
+		</div>
+	</form>	
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+		   Author: Jeremy Bowne	
+		   Filename: checkout.htm
+		-->
+	   <title>Assignment 9 - Checkout</title>
+	   <link href="assign9.css" rel="stylesheet" type="text/css" />
+		<script	src="https://code.jquery.com/jquery-3.1.1.js"
+		integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+		crossorigin="anonymous"></script>
+	   <!-- external js file-->
+	   <script type="text/javascript" src="checkout.js"></script>
+	</head>
+	<body>
+	<form id="payment_form" method="post" action="ordercomplete.htm">
+	<div id="checkout_main">
+		<div id="checkout_mainheader" class="heavy-rounded">
+			<img src="GlendaleCommunityCoffeeLogo.jpg" id="id_logo"/>
+		</div>
+		<div class="shopping-cart">
+			<div class="form-header">
+				<h4 class="stitle">Cart detail</h4>
+			</div>
+
+			<div id="item_totals">
+				<span id="item_subtotal_price">Subtotal: $0.00</span>
+				<br>
+				<span id="item_tax_price">Tax: $0.00</span>
+				<br>
+				<span id="item_total_price">Total: $0.00</span>
+			</div>
+		</div>
+		<div class="cc-payment">
+			<div class="form-header">
+				<h4 class="stitle">Credit card detail</h4>
+			</div>
+			<div class="form-body">
+
+				<input type="text" class="card-number" id="id_cardname" placeholder="Name">
+				<span id="id_name_error" class="cerror">*</span>
+				<input type="text" class="card-number" id="id_emailadd" placeholder="Email Address">
+				<span id="id_email_error" class="cerror">&#10060</span>
+				<input type="text" class="card-number" id="id_cardnumber" placeholder="Card Number">
+				<span id="id_credit_error" class="cerror">*</span>
+				<!-- Date Field -->
+				<div class="date-field">
+					<div class="month">
+						<select id="id_month" name="Month">
+							<option value="january">January</option>
+							<option value="february">February</option>
+							<option value="march">March</option>
+							<option value="april">April</option>
+							<option value="may">May</option>
+							<option value="june">June</option>
+							<option value="july">July</option>
+							<option value="august">August</option>
+							<option value="september">September</option>
+							<option value="october">October</option>
+							<option value="november">November</option>
+							<option value="december">December</option>
+						</select>
+					</div>
+					<div class="year">
+						<select id="id_year" name="Year">
+							<option value="2018">2018</option>
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+							<option value="2021">2021</option>
+							<option value="2022">2022</option>
+							<option value="2023">2023</option>
+							<option value="2024">2024</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Card Verification Field -->
+				<div class="card-verification">
+					<div class="cvv-input">
+						<input type="text" id="id_cvv" class="validate" placeholder="CVV">
+						<span id="id_cvv_error" class="cerror">&#10060</span>
+					</div>
+					<div class="cvv-details">
+						<p>3 or 4 digits usually found <br> on the signature strip</p>
+					</div>
+				</div>		
+			</div>
+			<div class="form-footer">
+			<button type="button" id="id_back" class="class_proceed"><a href="#">Back</a></button>
+			<button type="submit" id="id_proceed" class="class_proceed"><a href="ordercomplete.htm">Proceed</a></button>
+			</div>	
+		</div>	
+	</div>
+	</form>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+body {background-image: url(coffee_border_trimmed.jpg); background-position:left; 
+      background-repeat: repeat-y; margin-top:0; padding-top:0; background-color: #c09a7f;}
+
+/*  page css  */
+.colorBlue {color: blue;}
+#main {position: absolute;
+	 top: 25px;
+	 left: 150px;
+	text-align: right;
+}
+
+
+
+.big { font-weight: bold;}
+ 
+.border { border-width: 1px; border-color: green; border-style: solid; } 
+
+.blackborder { border-width: 2px; border-color: black; border-style: solid; } 
+
+/*.hider {display: none; } */
+
+.shower {display: inline;}
+.hider {display: hidden;}
+#id_product {display: inline;}
+#id_latte {display: inline;}
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #a27250;
+    border: solid 1px #6f4e37;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}

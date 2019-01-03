@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<head>
+	<!--
+	   Author: Jeremy Bowne
+	   Filename: assign6.html
+	-->
+   <title>Assignment 6 - Coffee Calculator</title>
+   <link href="assign6.css" rel="stylesheet" type="text/css" />
+
+   <!-- external js file-->
+   <script type="text/javascript" src="assign6.js"></script>
+
+</head>
+
+<body>
+
+	<form name = "mainForm">
+		<div id="main">
+			<img src="GlendaleCommunityCoffeeLogo.jpg" />
+			<br>
+			<hr>
+			<label for="nameInput">Customer Name</label>
+			<input type="text" id="nameInput" name="name" placeholder="John Doe" required="not required" />
+			<span id="errMsg1" style="color: red"> *</span>
+			<br>
+			<br>
+			
+			<legend>Coffee Type</legend>
+			
+			<fieldset id="productlegend">			
+			<select size="1" name="product_select" id="id_product">
+					<option value="Hazelnut">Hazelnut</option>
+					<option value="Regular Decaf">Regular Decaf</option>
+					<option value="Regular" selected="selected">Regular</option>
+					<option value="Americano">Americano</option>
+					<option value="Latte">Latte</option>
+				</select>
+			</fieldset>
+			
+			<fieldset id="id_latte" enabled>
+			<select size="1" name="latte_select" id="select_latte"  >
+				<option value="2.00" selected="selected">Mocha</option>
+				<option value="2.50" >Macchiato</option>
+				<option value="2.75" >Cappuccino</option>
+				<option value="3.00" >Cafe au lait</option>
+			</select>
+			</fieldset >
+			
+			<br>
+			<br>
+			<span id="id_price" class="border" style="color: green; font-weight: bold;">$2.25</span>
+
+			<fieldset id="coffeetemplegend">
+			<legend>Coffee Temperature</legend>
+			
+			<img src="hot.gif" alt="hot coffee" id="id_hot_coffee" border="4" style="width:64px;height:64px;" >
+			<img src="cold.gif" alt="cold coffee" id="id_cold_coffee" border="2" style="width:64px;height:64px;">
+
+	        <tr>
+				<td>
+					<p>
+					<input type="radio" name="hotcoldradio" id="hotRadio" value="0.00" checked="checked" />
+						<label for="hotRadio">Hot</label>				
+					<input type="radio" name="hotcoldradio" id="coldRadio" value="0.50" />
+						<label for="coldRadio">Cold</label>
+					</p>
+				</td>
+			</tr>
+			<span id="id_temp" class="border" style="color: green; font-weight: bold;">$0.00</span>
+			</fieldset>
+
+			
+			<fieldset id="coffeeSizeLegend">
+			<legend>Coffee Size</legend>
+			<img src="small.jpg" alt="Coffee" id="id_size_sml" border="5" style="width:28px;height:28px;border-color: green;">
+			<img src="small.jpg" alt="Coffee" id="id_size_med" border="5" style="width:38px;height:38px;">
+			<img src="small.jpg" alt="Coffee" id="id_size_lrg" border="5" style="width:48px;height:48px;">
+			<img src="small.jpg" alt="Coffee" id="id_size_xlg" border="5" style="width:64px;height:64px;">
+			<tr>
+			<!--  <p class="big"><td class="labelcell">Coffee Size</td></p> -->
+			<td>
+			
+			<p>
+				<input type="radio" name="radiobuttons" id="smallCoffee" value="0.50" checked="checked" />
+				<label for="smallCoffee">Small</label>
+		
+				<input type="radio" name="radiobuttons" id="mediumCoffee" value="0.50" />
+				<label for="mediumCoffee">Medium</label>
+			
+				<input type="radio" name="radiobuttons" id="largeCoffee" value="0.50" />
+				<label for="largeCoffee">Large</label>
+		
+				<input type="radio" name="radiobuttons" id="extraLargeCoffee" value="1.00" />
+				<label for="largeCoffee">Extra Large</label>
+			</p>
+			<span id="id_size" class="border" style="color: green; font-weight: bold;">$0.00</span>
+			</fieldset>
+			<br>
+			
+			<fieldset id="coffeeTotalsLegend">
+			<legend>Bill Totals</legend>
+			
+			<label for="tax_select">City Tax:</label>
+			<select size="1" name="tax_select" id="id_tax">
+				<option value="G" selected="selected">Glendale</option>
+				<option value="P">Peoria</option>
+				<option value="PH">Phoenix</option>
+			</select>
+			
+
+			<br>
+			<br>
+
+			</td>
+			
+			<label for="cityTaxOutput">City Tax Amount</label>
+			<input type="text" id="cityTaxOutput" name="taxcodeOutput" placeholder="0.08" required="required" disabled/><br>
+			<br>
+			
+			<label for="subTotalInput">Subtotal</label>
+			<input type="text" id="subTotalInput" name="subttotalInput" placeholder="0.00" required="required" disabled/><br>
+			<br>
+			
+			<label for="totalOutput">Total With Tax</label>
+			<input type="text" id="totalOutput" name="totalOutput" placeholder="0.00" required="required" disabled/><br>
+			<br>
+			<input type="button" value="Add to cart" onclick="totaler(true);" />
+			<p id="placeholder1"></p>
+			<br>
+			
+			<hr>
+			<textarea id="myTextArea" rows="10" cols="60" maxLength="500" defaultValue="Cart:" visibility="hidden" disabled readOnly>
+				Cart:
+			</textarea>
+			<hr>
+			<label for="gTotalOutput">Grand Total With Tax</label>
+			<input type="text" id="gTotalOutput" name="gTotalOutput" placeholder="0.00" required="required" disabled/><br>
+			<br>
+
+			<input type="button" value="Checkout" onclick="checkOut();" />
+			<br>
+			
+			</tr>
+			<br>
+
+			</fieldset>
+			
+		</div>
+	</form>
+</body>
+</html>

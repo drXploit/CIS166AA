@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+	<!--
+	   Author: Jeremy Bowne
+	   Filename: assign4.html
+	-->
+   <title>Assignment 4 - Coffee Calculator</title>
+   <link href="assign4.css" rel="stylesheet" type="text/css" />
+   
+   <!-- external js file-->
+   <script type="text/javascript" src="assign4.js"></script>   
+   
+</head>
+
+<body>
+	
+	<form name = "mainForm">
+		<div id="main">
+			<h1>Glendale Community Coffee</h1>
+			<img src="coffee_logo_micro.jpg" />
+			<br>
+	        <tr>
+	        <td class="labelcell">Coffee Temperature<span id="errMsg1" style="color: red"> *</span>
+			</td>
+      		<td>
+		    <p><input type="radio" name="hotcoldradio" id="hotRadio" value="0.00" checked="checked" />
+      			<label for="hotRadio">Hot: +$0.0</label>
+			</p>
+      		<p><input type="radio" name="hotcoldradio" id="coldRadio" value="0.50" />
+         		<label for="coldRadio">Cold: +$0.50</label>
+ 			</p>
+			</td>
+			</tr>
+
+
+		        <hr>
+		        <tr>
+				<td class="labelcell">Coffee Size<span id="errMsg1" style="color: red"> *</span>
+				</td>
+				<td>
+				<p><input type="radio" name="radiobuttons" id="smallCoffee" value="0.50" checked="checked" />
+				<label for="smallCoffee">Small: +$0.50</label>
+				</p>
+				<p><input type="radio" name="radiobuttons" id="mediumCoffee" value="0.50" />
+				<label for="mediumCoffee">Medium: +$0.50</label>
+				</p>
+				<p><input type="radio" name="radiobuttons" id="largeCoffee" value="0.50" />
+				<label for="largeCoffee">Large: +$0.50</label>
+				</p>
+				<p><input type="radio" name="radiobuttons" id="extraLargeCoffee" value="1.00" />
+				<label for="largeCoffee">Extra Large: +$1.00</label>
+				</p>
+				
+		        <hr>
+		        <label for="nameInput">Name</label>
+	        	<input type="text" id="nameInput" name="name" placeholder="John Doe" required="not required" /><br>
+		        <br>
+		        <label for="subTotalInput">Subtotal</label>
+	        	<input type="text" id="subTotalInput" name="subttotalInput" placeholder="0.00" required="required" disabled/><br>
+		        <br>
+
+
+
+	      		<label for="totalOutput">Total With Tax</label>
+		        <input type="text" id="totalOutput" name="totalOutput" placeholder="0.00" required="required" disabled/><br>
+		        <br>
+	      		<label for="gTotalOutput">Grand Total With Tax</label>
+		        <input type="text" id="gTotalOutput" name="gTotalOutput" placeholder="0.00" required="required" disabled/><br>
+		        <br>
+				<input type="button" value="Add to cart" onclick="totaler(true);" />
+				<input type="button" value="Bill total" onclick="totaled();" />
+				
+			<br>
+
+
+			</td>
+			</tr>
+		</div>
+	</form>	
+</body>
+</html>

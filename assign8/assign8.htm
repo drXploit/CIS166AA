@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+		   Author: Jeremy Bowne
+		   Filename: assign8.html
+		-->
+	   <title>Assignment 8 - Coffee Calculator</title>
+	   <link href="assign8.css" rel="stylesheet" type="text/css" />
+		<script	src="https://code.jquery.com/jquery-3.1.1.js"
+		integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+		crossorigin="anonymous"></script>
+	   <!-- external js file-->
+	   <script type="text/javascript" src="assign8.js"></script>
+	</head>
+	<body>
+	<form id="form_cart" method="post" action="checkout.htm">
+		<div id="main" class="heavy-rounded" >
+			<div id="mainheader" class="heavy-rounded">
+				<img src="GlendaleCommunityCoffeeLogo.jpg" id="id_logo"/>
+			</div>		
+			
+				<div id="div_id_big" class="gradient-dark-radial heavy-rounded">
+					<div id="div_id_input_name" class="rangeslidecontainer" >
+						<label for="nameInput" class="switch-font" style="vertical-align:middle;">Name</label>
+						<input type="text" id="nameInput" name="name" class="custom-select e_change" style="vertical-align:bottom;width:60%;" placeholder="Name" required>
+						<span id="errMsg1" style="color: red"> *</span>
+					</div>	
+					
+					<div id="div_id_input_product" class="rangeslidecontainer">
+						<select size="1" name="product_select" id="id_product" class="custom-select e_change" style="width:44%;">
+							<option value="Hazelnut">Hazelnut</option>
+							<option value="Regular Decaf">Regular Decaf</option>
+							<option value="Regular" selected="selected">Regular</option>
+							<option value="Americano">Americano</option>
+							<option value="Latte">Latte</option>
+						</select>
+						<select size="1" name="latte_select" id="select_latte" class="custom-select e_change" >
+							<option value="2.00" selected="selected">Mocha</option>
+							<option value="2.50" >Macchiato</option>
+							<option value="2.75" >Cappuccino</option>
+							<option value="3.00" >Cafe au lait</option>
+						</select>
+						<label id="id_price" class="border-font border" style="color:green;font-weight:bold;">$2.25</label>
+					</div>
+
+					<div id="div_id_input_temp" class="rangeslidecontainer">
+						<!-- Rounded switch -->
+						<label class="switch-font">Hot</label>
+						<label class="switch">
+						  <input type="checkbox" class="e_change" id="id_tmp_slider" value="0.50">
+						  <span class="slider round"></span>
+						</label>
+						<label class="switch-font">Cold</label>				
+						<label id="id_temp" class="border-font border" style="color:green;font-weight:bold;">$0.00</label>
+					</div>
+
+					<div id="div_id_input_size" class="rangeslidecontainer">
+						<span id="id_label_size" class="switch-font">SM</span>
+						<input type="range" name="name_size" id="range_size" class="rangeslider e_change" value="0" min="1" max="4" oninput='$("#id_label_size").text(ce.properties[ce.SIZE].text[$("#range_size").val()-1]);' />
+						<label id="id_size" class="border-font border" style="color:green;font-weight:bold;">$0.00</label>
+					</div>
+
+				</div>
+			
+			<div id="div_id_totals" class="heavy-rounded gradient-dark-radial">
+				<div id="div_id_totals_subtotal" class="rangeslidecontainer">
+					<label for="subTotalInput" class="switch-font">Subtotal</label>
+					<input type="text" id="subTotalInput" name="subttotalInput" class="custom-select" placeholder="0.00" disabled />
+				</div>
+
+				<div id="div_id_totals_tax"  class="rangeslidecontainer" >
+					<select size="1" name="id_tax" id="id_tax" class="custom-select e_change" >
+						<option value="G" selected="selected">Glendale</option>
+						<option value="P">Peoria</option>
+						<option value="PH">Phoenix</option>
+					</select>
+					<label for="cityTaxOutput"  class="switch-font">Tax</label>
+					<input type="text" id="cityTaxOutput" name="taxcodeOutput" class="custom-select" placeholder="0.08" disabled />
+				</div>
+
+				<div id="div_id_totals_total" class="rangeslidecontainer">				
+					<label for="totalOutput" class="switch-font">Total With Tax</label>
+					<input type="text" id="totalOutput" name="totalOutput" class="custom-select" placeholder="0.00" disabled />
+				</div>
+
+				<div id="div_id_reset" style="text-align:right;" class="rangeslidecontainer">
+					<input type="button" id="btn_reset" value="Reset" style="height:auto;width:100%;bottom-padding:5px;" class="custom-button btn" />
+				</div>
+				<div id="div_id_totals_cart" style="text-align:right;" class="rangeslidecontainer">
+					<label class="switch-font" style="width:15%;" >QTY</label>
+					<select id="id_quantity" name="id_quantity" style="width:auto;" class="custom-select e_change">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+					<input type="button" id="btn_addToCart" style="width:60%;height:auto;" value="Add to cart" class="custom-button btn_class" onclick="totaler(true);" />
+				</div>
+
+			</div>
+
+			<div class="div_receipt hider" id="id_receipt">
+				<div id="div_id_panel" class="box card-panel">
+					<div id="div_id_merchant" class="merchant">
+						<img id="receipt_logo" src="GCC_LOGO.png" />
+						<h5 class="center-align">Glendale Community Coffee</h5>
+						<h4 class="center-align">6000 W. Olive</h4>
+						<h4 class="center-align">Glendale,AZ 85302</h4>
+						<h4 class="center-align">(623)555-1234</h4>
+						<br>
+						<h3 class="center-align">Thank You For Visiting</h3>
+						<h4 class="center-align">www.glendalecommunitycoffee.com</h4>
+						<p class="left-align" id="id_date">Nov 04, 2018 9:17 PM</p>
+						<p id="id_global_sequence" class="right-align" style="text-align:right">SEQ:1</p>
+					</div>
+					<div id="div_id_invoice" class="invoice">
+						<table class="highlight" id="invoice_table">
+							<thead>
+								<tr>
+									<th class="left-align">QTY</th>
+									<th class="center-align">SZ</th>
+									<th class="left-align">TMP</th>
+									<th class="left-align">ITEM</th>
+									<th class="right-align">PRICE</th>
+								</tr>
+							</thead>
+							<tbody id="table_body">
+								<tr id="id_subtotal">
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="center-align short_bold">Subtotal</td>
+									<td class="right-align short_bold" id="id_row_subtotal_amount">$0.00</td>
+								</tr>								
+								<tr id="id_row_tax">
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="center-align short_bold">Tax</td>
+									<td class="right-align short_bold" id="id_row_tax_amount">$0.00</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td class="center-align bold">Total</td>
+									<td class="right-align bold" id="id_row_total" style="margin-right:5px;">$0.00</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div id="div_gtotal" class="heavy-rounded">		
+				<div id="div_gtotal_1" class="rangeslidecontainer">
+					<label for="gTotalOutput" class="switch-font">Grand Total With Tax</label>
+					<input type="text" class="custom-select" id="gTotalOutput" name="gTotalOutput" placeholder="0.00" disabled />
+				</div>
+				<div id="div_gtotal_2" class="rangeslidecontainer">
+					<input type="submit" name="btn_chck" id="btn_chck" class="custom-button" value="Review Order" disabled/>
+				</div>
+			</div>
+		</div>
+		<div id="div_movable" class="heavy-rounded" >
+			<div id="div_movableheader" class="heavy-rounded" style="font-size:24px;">
+			<div id="div_movableheader" class="heavy-rounded" style="font-size:24px;">
+				<label id="id_label_cart">Cart</label>
+				<div style = "position:absolute;font-size:32px;top:0px;">  
+					<label id="id_cart_quantity" style = "font-size:32px;color:red;text-align:center;vertical-align:top;">0</label>
+				</div>
+			</div>
+			<div id="div_movablefooter">			
+				<input type="submit" name="id_cart_checkout" id="id_cart_checkout" class="custom-button" value="Review Order" disabled/>
+			</div>
+		</div>
+	</form>
+	</body>
+</html>
